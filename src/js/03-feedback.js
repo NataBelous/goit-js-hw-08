@@ -6,11 +6,12 @@ const refs = {
   lable: document.querySelector(".feedback-form lable"),
 };
 refs.form.addEventListener('submit', onformSubmit);
-refs.input.addEventListener('input', throttle(onTextareaInput, 1000));
+refs.input.addEventListener('input', throttle(onTextareaInput, 500));
 
 refs.form.addEventListener('input', evt => {
   formData[evt.target.name] = evt.target.value;
   formData.localStorage.setItem(LOCALE_STORAGE_KEY);
   console.log(formData);
 });
+
 populateTextarea();
